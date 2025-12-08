@@ -57,7 +57,7 @@ function loadModel(path, scale, position, rotationY, parentGroup) {
 // --- 5. THE STAGE (FLAT & HUGE) ---
 
 // A. The Floor 
-const floorTexture = textureLoader.load('/models/floor_texture.jpg');
+const floorTexture = textureLoader.load('./models/floor_texture.jpg');
 floorTexture.wrapS = THREE.RepeatWrapping;
 floorTexture.wrapT = THREE.RepeatWrapping;
 floorTexture.repeat.set(12, 12);
@@ -76,7 +76,7 @@ floor.receiveShadow = true;
 scene.add(floor);
 
 // B. The Backdrop (FLAT, HUGE, MOVED UP)
-const backdropTexture = textureLoader.load('/models/temple_backdrop.jpg');
+const backdropTexture = textureLoader.load('./models/temple_backdrop.jpg');
 backdropTexture.colorSpace = THREE.SRGBColorSpace;
 
 // 1. Geometry: Made it 100 wide x 50 high (Huge Billboard)
@@ -125,10 +125,10 @@ scene.add(coupleGroup);
 coupleGroup.position.set(0, 0, 4); 
 
 // GROOM
-loadModel('/models/lego_groom.glb', 0.5, new THREE.Vector3(-0.6, -1, 0), 0, coupleGroup);
+loadModel('./models/lego_groom.glb', 0.5, new THREE.Vector3(-0.6, -1, 0), 0, coupleGroup);
 
 // BRIDE
-loadModel('/models/lego_bride.glb', 0.5, new THREE.Vector3(0.6, 0, 0), THREE.MathUtils.degToRad(150), coupleGroup);
+loadModel('./models/lego_bride.glb', 0.5, new THREE.Vector3(0.6, 0, 0), THREE.MathUtils.degToRad(150), coupleGroup);
 
 const hitbox = new THREE.Mesh(new THREE.BoxGeometry(2,2,2), new THREE.MeshBasicMaterial({visible: false}));
 coupleGroup.add(hitbox);
